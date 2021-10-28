@@ -1,1 +1,2 @@
-# pet-care-volunteer-platform
+# Pet care volunteer platform project
+In development
