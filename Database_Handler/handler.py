@@ -8,7 +8,13 @@ class Login:
     def check(name, password):
         q = {"name": name, "password": password} 
         x = login.find_one(q, {"_id": 0})
-        if x != None:
-            return x
+        return x
+
+class SignUp:
+    def check(name):
+        q = {"name": name}
+        x = login.find_one(q, {"_id": 0})
+        if x!=None:
+            return "username already exists"
         else:
-            return "none"
+            return "accepted"
