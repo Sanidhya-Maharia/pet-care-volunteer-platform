@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
    <body>
-      <form action = "http://localhost:5000/loggedin" method = "POST">
+      <form action = "http://localhost:5000/login" method = "POST">
          <p>Name <input type = "text" name = "Name" /></p>
          <p>Password <input type = "password" name = "Password" /></p>
          <p><input type = "submit" value = "log in" /></p>
-         <p><input type = "submit" formaction="http://localhost:5000/signup" value = "sign up" /></p>
+      </form>
+      <form action = "http://localhost:5000/signup" method="GET">
+         <p><input type = "submit" value = "sign up" /></p>
       </form>
    </body>
 </html>
