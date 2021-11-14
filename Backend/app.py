@@ -1,11 +1,16 @@
 from Database_Handler.handler import *
-from flask import Flask, request, render_template, redirect
+#from flask import Flask, request, render_template, redirect
+from flask import *
 
 app = Flask(__name__)
+app.secret_key = "secret"
 
 @app.route("/")
 def home():
-    return redirect('/login')
+    if 'name' in session:
+        return render_template('home2.html', username=session['name'])
+    else:
+        return render_template('home.html')
 
 @app.route("/login",methods = ['POST', 'GET'])
 def loginpage():
@@ -13,8 +18,9 @@ def loginpage():
         name = request.form['Name']
         password = request.form['Password']
         result = Login.check(name, password)
+        session['name'] = name
         if result != None:
-            return result
+            return redirect('/')
         else:
             return redirect('/login')
     
@@ -53,3 +59,11 @@ def signup():
         return "accepted"
 
     return render_template('signup.html')
+
+@app.route("/logout",methods = ['POST', 'GET'])
+def logout():
+    if 'name' in session:
+        session.pop('name', None)
+        return redirect('/')
+    else:
+        return "no one is logged in"
