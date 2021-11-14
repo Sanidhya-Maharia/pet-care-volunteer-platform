@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+}
+
+#logo{
+    margin: 10px 20px;
+}
+
+#logo img{
+    margin: 8px 8px;
+}
+
+#navbar{
+    position: relative;
+}
+#navbar ul{
+    display: flex;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+#navbar ul li{
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+#navbar ul li a{
+    display: block;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+#navbar ul li a:hover{
+    color: black;
+    background-color: bisque;
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 150px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+}
+
+#home::before{
+    content: "";
+    position: absolute;
+    background: url(../OIP1.png);
+    height: 96%;
+    width: 100%;
+    z-index: -1;
+}
+
+/* Utility Classes */
+.h-primary{
+    font-size: 2.0rem;
+    padding: 10px;
+}
+
+.btn{
+    padding: 5px 20 px;
+    border: 2px solid white;
+    background-color: rgb(150, 111, 120);
+    color: white;
+    margin: 100px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
