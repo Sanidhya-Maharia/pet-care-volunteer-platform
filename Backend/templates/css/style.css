@@ -68,6 +68,18 @@
     z-index: -1;
 }
 
+#home h1{
+    color: black;
+    text-align: center;
+    font-size: 2.0rem;
+}
+
+#home p{
+    color: black;
+    text-align: center;
+    font-family: 'M PLUS 1', sans-serif;
+}
+
 /* Utility Classes */
 .h-primary{
     font-size: 2.0rem;
@@ -77,10 +89,14 @@
 .btn{
     padding: 5px 20 px;
     border: 2px solid white;
-    background-color: rgb(150, 111, 120);
-    color: white;
+    background-color: rgb(211, 18, 63);
+    color: rgb(7, 8, 5);
     margin: 100px 15px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.center{
+    text-align: center;
 }
