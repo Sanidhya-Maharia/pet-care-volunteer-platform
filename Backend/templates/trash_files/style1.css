@@ -41,9 +41,14 @@ body{
 .btn{
     cursor: pointer;
     outline: none;
-    width: 25%;
+    width: 15%;
     margin-top: 18px;
     padding-top: 2px;
+    border-radius: 5px;
+    outline: none;
+    /* border: none; */
+    background: none;
+    color: white;
 }
 /* .box {
     width: 100%;

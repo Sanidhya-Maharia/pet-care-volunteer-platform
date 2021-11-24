@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+   <body>
+      <form action = "http://localhost:5000/signup" method = "POST">
+         <h>Set username and password:</h>
+         <p>Enter a username <input type = "text" name = "signupname" /></p>
+         <p>Enter a password <input type = "password" name = "signuppass" /></p>
+         <p>Re-enter password <input type = "password" name = "signuprepass" /></p>
+         <h>Set up your profile:</h>
+         <p>First Name <input type = "text" name = "firstname" /></p>
+         <p>Last Name <input type = "text" name = "lastname" /></p>
+         <p>Enter your pincode <input type = "number" name = "pincode" /></p>
+         <label for="city">Select your city:</label>
+         <select name="city" id="city">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Bangalore">Bangalore</option>
+         </select>
+         <p></p>
+         <h>Contact Information:</h>
+         <p>Phone number <input type = "number" name = "phno" /></p>
+         <p>Email <input type = "text" name = "email" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+   </body>
+</html>

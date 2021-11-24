@@ -21,6 +21,7 @@
 }
 #navbar ul{
     display: flex;
+    overflow: hidden;
 }
 
 #navbar::before{
@@ -62,7 +63,8 @@
 #home::before{
     content: "";
     position: absolute;
-    background: url(../OIP1.png);
+    background: url(../newpic.jpg);
+    background-size: cover;
     height: 96%;
     width: 100%;
     z-index: -1;
