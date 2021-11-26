@@ -10,7 +10,7 @@ def home():
     if 'name' in session:
         return render_template('home2.html', username=session['name'])
     else:
-        return render_template('home.html')
+        return render_template('hometest.html')
 
 @app.route("/login",methods = ['POST', 'GET'])
 def loginpage():
@@ -24,7 +24,7 @@ def loginpage():
         else:
             return redirect('/login')
     
-    return render_template('login.html')
+    return render_template('testlogin.html')
 
 @app.route("/signup",methods = ['POST', 'GET'])
 def signup():
@@ -58,7 +58,7 @@ def signup():
         SignUp.updateprofiledb(name, firstname, lastname, pincode, city, phno, email)
         return "accepted"
 
-    return render_template('signup.html')
+    return render_template('signupb.html')
 
 @app.route("/logout",methods = ['POST', 'GET'])
 def logout():
