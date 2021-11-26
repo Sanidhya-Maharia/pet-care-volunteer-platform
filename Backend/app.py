@@ -67,3 +67,29 @@ def logout():
         return redirect('/')
     else:
         return "no one is logged in"
+
+@app.route("/volunteer",methods = ['POST', 'GET'])
+def volunteer():
+    if 'name' in session:
+        if request.method == 'POST':
+            start = request.form['sdate']
+            end = request.form['edate']
+            pref = request.form['pref']
+            id = session['name']
+            List = [start, end, pref]
+
+            for x in List:
+                result1 = Volunteer.check_not_null(x)
+                if result1 == None:
+                    return redirect('/volunteer')
+
+            result2 = Volunteer.check_dates(start, end)
+            if result2 == None:
+                return redirect('/volunteer')
+            
+            Volunteer.check_for_existing(id, start, end, pref)
+            return "done"
+
+        return render_template('volunteer.html')
+    else:
+        return redirect('/login')
