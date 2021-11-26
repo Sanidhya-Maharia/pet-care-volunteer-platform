@@ -1,2 +1,2 @@
 # Pet care volunteer platform project
-Added Login, working on sign up
+Added Login, sign up, volunteering; working on search and display features
