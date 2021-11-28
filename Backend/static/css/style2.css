@@ -36,8 +36,13 @@
   .content .text{
     font-size: 25px;
     font-weight: 600;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
     color: rgb(247, 233, 233);
+  }
+
+  .content .error{
+    margin-bottom: 10px;
+    color: rgb(179, 2, 2)
   }
 
   .content .field{

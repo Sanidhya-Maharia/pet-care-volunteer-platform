@@ -14,6 +14,7 @@ def home():
 
 @app.route("/login",methods = ['POST', 'GET'])
 def loginpage():
+    alert = None
     if request.method == 'POST':
         name = request.form['Name']
         password = request.form['Password']
@@ -22,9 +23,9 @@ def loginpage():
         if result != None:
             return redirect('/')
         else:
-            return redirect('/login')
+            alert = "invalid credentials"
     
-    return render_template('testlogin.html')
+    return render_template('testlogin.html', alert=alert)
 
 @app.route("/signup",methods = ['POST', 'GET'])
 def signup():
