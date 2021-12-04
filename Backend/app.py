@@ -94,3 +94,23 @@ def volunteer():
         return render_template('volunteer.html')
     else:
         return redirect('/login')
+
+@app.route("/search",methods = ['POST', 'GET'])
+def search():
+    if 'name' in session:
+        if request.method == 'POST':
+            start = request.form['sdate']
+            end = request.form['edate']
+            List = [start, end]
+
+            for x in List:
+                result1 = Search.check_not_null(x)
+                if result1 == None:
+                    return redirect('/search')
+            
+            Search.getdata(start, end)
+            return "check console"
+        
+        return render_template('search.html')
+    else:
+        return redirect('/login')

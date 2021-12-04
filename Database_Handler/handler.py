@@ -1,4 +1,5 @@
 import pymongo
+import json
 
 client = pymongo.MongoClient("mongodb+srv://Sanidhya:user1@cluster0.9uhlx.mongodb.net/User_info?retryWrites=true&w=majority")
 db = client["User_info"]
@@ -69,3 +70,17 @@ class Volunteer:
             return None
         else:
             return 1
+
+class Search:
+    def check_not_null(var):
+        if var==None or var=="":
+            return None
+        else:
+            return 1
+
+    def getdata(start, end):
+        q = volstat.find({"end_date": {"$gt": start}, "start_date": {"$lt": end}})
+        for x in q:
+            y = json.dumps(x)
+            z = json.loads(y)
+            print(z)
