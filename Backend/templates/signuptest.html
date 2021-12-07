@@ -1,36 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style3.css">
-</head>
-<body>
-    <div class="content">
-        <div class="text">Sign Up</div>
-        <form action = "/signup" method = "POST">
-            <h>Set username and password:</h>
-            <input type = "text" name = "signupname" placeholder="Enter Usename" required/></p>
-            <p>Enter a password <input type = "password" name = "signuppass" placeholder="Enter a Password"/></p>
-            <p>Re-enter password <input type = "password" name = "signuprepass" placeholder="Confirm Password"/></p>
-            <h>Set up your profile:</h>
-            <p>First Name <input type = "text" name = "firstname" /></p>
-            <p>Last Name <input type = "text" name = "lastname" /></p>
-            <p>Enter your pincode <input type = "number" name = "pincode" /></p>
-            <label for="city">Select your city:</label>
-            <select name="city" id="city">
-               <option value="Hyderabad">Hyderabad</option>
-               <option value="Jaipur">Jaipur</option>
-               <option value="Bangalore">Bangalore</option>
-            </select>
-            <p></p>
-            <h>Contact Information:</h>
-            <p>Phone number <input type = "number" name = "phno" /></p>
-            <p>Email <input type = "text" name = "email" /></p>
-            <p><input type = "submit" value = "submit" /></p>
-         </form>
-    </div>
-</body>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>SignUp</title>
+      <link rel="stylesheet" href="../static/css/style3.css">
+      <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <div class="container">
+         <header>Signup Form</header>
+         <div class="progress-bar">
+            <div class="step">
+               <p>
+                  Name
+               </p>
+               <div class="bullet">
+                  <span>1</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Contact
+               </p>
+               <div class="bullet">
+                  <span>2</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Place
+               </p>
+               <div class="bullet">
+                  <span>3</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+            <div class="step">
+               <p>
+                  Submit
+               </p>
+               <div class="bullet">
+                  <span>4</span>
+               </div>
+               <div class="check fas fa-check"></div>
+            </div>
+         </div>
+         <div class="form-outer">
+            <form action="#">
+               <div class="page slide-page">
+                  <div class="title">
+                     Basic Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        First Name
+                     </div>
+                     <input type="text" name="firstname" placeholder="enter first name"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Last Name
+                     </div>
+                     <input type="text" name="lastname" placeholder="enter last name"/>
+                  </div>
+                  <div class="field">
+                     <button class="firstNext next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Contact Info:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Email Address
+                     </div>
+                     <input type="text" name="email" placeholder="enter email id"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Phone Number
+                     </div>
+                     <input type="Number" name="phno" placeholder="enter phone number"/>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-1 prev">Previous</button>
+                     <button class="next-1 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Address:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        PIN Code
+                     </div>
+                     <input type="Number" name="pincode" placeholder="enter pincode"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        City
+                     </div>
+                     <select>
+                        <option>Hyderabad</option>
+                        <option>Bangalore</option>
+                        <option>Jaipur</option>
+                     </select>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-2 prev">Previous</button>
+                     <button class="next-2 next">Next</button>
+                  </div>
+               </div>
+               <div class="page">
+                  <div class="title">
+                     Login Details:
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Username
+                     </div>
+                     <input type="text" name="username" placeholder="enter username"/>
+                  </div>
+                  <div class="field">
+                     <div class="label">
+                        Password
+                     </div>
+                     <input type="password" name="password" placeholder="enter password"/>
+                  </div>
+                  <div class="field btns">
+                     <button class="prev-3 prev">Previous</button>
+                     <button class="submit">Submit</button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+      <!-- <script> 
+        $(document).ready(function(){
+             $("#submit").click(function(){
+           $('input').attr('required', true); 
+           document.getElementById("alert_down").innerHTML  
+                      = "Required attribute enabled"; 
+           });
+        });
+      </script> -->
+      <script src="../scripts/script.js"></script>
+   </body>
 </html>
