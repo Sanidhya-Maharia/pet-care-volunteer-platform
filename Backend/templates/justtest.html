@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style3.css') }}"> -->
+    <link rel="stylesheet" href="../static/css/style3.css">
+</head>
+<body>
+    <div class="container">
+        <header>SignUp Form</header>
+        <div class="form-outer">
+            <form action="#">
+                <div class="page">
+                    <div class="title">Basic Info:</div>
+                    <div class="field">
+                        <div class="label">First Name</div>
+                        <input type="text" name="firstname" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Last Name</div>
+                        <input type="text" name="lastname" />
+                    </div>
+                    <div class="field">
+                        <button>Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Contact Info:</div>
+                    <div class="field">
+                        <div class="label">Email Address</div>
+                        <input type="text" name="email" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Contact Number</div>
+                        <input type="number" name="phno" required />
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-1 prev">Previous</button>
+                        <button class="next-1 next">Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Address Info:</div>
+                    <div class="field">
+                        <div class="label">PIN Code</div>
+                        <input type="number" name="pincode" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">City</div>
+                        <label for="city">Select Your City: </label>
+                        <select name="city" id="city">
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Bangalore">Bangalore</option>
+                            <option value="Jaipur">Jaipur</option>
+                        </select>
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-2 prev">Previous</button>
+                        <button class="next-2 next">Next</button>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <div class="title">Login Details:</div>
+                    <div class="field">
+                        <div class="label">Username</div>
+                        <input type="text" name="signupname" placeholder="Enter Your Username" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Password</div>
+                        <input type="password" name="signuppass" placeholder="Enter a Password" required />
+                    </div>
+                    <div class="field">
+                        <div class="label">Confirm Password</div>
+                        <input type="password" name="signuprepass" placeholder="Re-Enter Password" required />
+                    </div>
+                    <div class="field btns">
+                        <button class="prev-3 prev">Previous</button>
+                        <button class="Submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

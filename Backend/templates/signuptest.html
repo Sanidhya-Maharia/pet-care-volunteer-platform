@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="content">
+        <div class="text">Sign Up</div>
+        <form action = "/signup" method = "POST">
+            <h>Set username and password:</h>
+            <input type = "text" name = "signupname" placeholder="Enter Usename" required/></p>
+            <p>Enter a password <input type = "password" name = "signuppass" placeholder="Enter a Password"/></p>
+            <p>Re-enter password <input type = "password" name = "signuprepass" placeholder="Confirm Password"/></p>
+            <h>Set up your profile:</h>
+            <p>First Name <input type = "text" name = "firstname" /></p>
+            <p>Last Name <input type = "text" name = "lastname" /></p>
+            <p>Enter your pincode <input type = "number" name = "pincode" /></p>
+            <label for="city">Select your city:</label>
+            <select name="city" id="city">
+               <option value="Hyderabad">Hyderabad</option>
+               <option value="Jaipur">Jaipur</option>
+               <option value="Bangalore">Bangalore</option>
+            </select>
+            <p></p>
+            <h>Contact Information:</h>
+            <p>Phone number <input type = "number" name = "phno" /></p>
+            <p>Email <input type = "text" name = "email" /></p>
+            <p><input type = "submit" value = "submit" /></p>
+         </form>
+    </div>
+</body>
+</html>
