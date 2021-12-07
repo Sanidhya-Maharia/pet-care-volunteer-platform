@@ -1,2 +1,10 @@
 # Pet care volunteer platform project
-Added Login, sign up, volunteering; working on search and display features
+## Python packages required
+* flask
+* pymongo
+* geopy
+* json
+## Instructions to test application
+Use `run.py`
+## Additional information
+Check out the [architecture](Documentation/Architecture.md) for more.
