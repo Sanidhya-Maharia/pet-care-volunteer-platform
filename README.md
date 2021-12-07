@@ -4,5 +4,5 @@
 * pymongo
 * geopy
 * json
-## Intructions to test application
+## Instructions to test application
 Use `run.py`
