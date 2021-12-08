@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="content">
+        <div class="text">New Here!<br>SignUp Now</div>
+    <form action="/signup" method="POST">
+        <div class="field">
+          <input type="text" name="firstname" placeholder="Enter Your First Name" required />
+        </div>
+        
+        <div class="field">
+          <input type="text" name="lastname" placeholder="Enter Your Last Name" required />
+        </div>
+
+        <div class="field">
+            <input type="text" name="email" placeholder="Enter email id" />
+        </div>
+
+        <div class="field">
+            <input type="number" name="phno" placeholder="Enter phone number" required />
+        </div>
+
+        <div class="field">
+            <input type="number" name="pincode" placeholder="Enter PIN code" required />
+        </div>
+
+        <div class="field">
+            <div class="label">City:</div>
+            <select name="city">
+                <option>Hyderabad</option>
+                <option>Bangalore</option>
+                <option>Jaipur</option>
+            </select>
+        </div>
+        <div class="field">
+            <input type="text" name="signupname" placeholder="Enter Username" required/>
+        </div>
+
+        <div class="field">
+            <input type="password" name="signuppass" placeholder="Enter Password" required />
+        </div>
+
+        <div class="field">
+            <input type="password" name="signuprepass" placeholder="Re-Enter Password" required />
+        </div>
+        <button>SIGN UP</button>
+      </form>
+      </div>
+</body>
+</html>
