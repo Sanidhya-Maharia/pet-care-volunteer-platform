@@ -4,11 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style2.css') }}"> -->
+    <link rel="stylesheet" href="../static/css/style6.css">
 </head>
 <body>
+    <header>
+        <div class="text">Hey <span><strong>{{username}}! </span>Thanks For Choosing To Volunteer..</strong></div><br>
+        <p>Now You Need To Let Us Know Your Availabity And Pet preference</p>
+    </header>
     <div class="content">
-        
+        <form action="/volunteer" method="POST">
+            <div class="field">
+            <input type="date" name="sdate" />
+            </div>
+            
+            <div class="field">
+              <input type="date" name="edate" />
+            </div>
+            <button>Submit</button>
+        </form>
     </div>
 </body>
 </html>
