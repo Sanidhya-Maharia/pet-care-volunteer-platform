@@ -11,7 +11,7 @@ body{
   justify-content: center;
   min-height: 100vh;
   overflow: hidden;
-  background: url(../R.jpg) no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../s2.jpg);
   background-size: cover;
 }
 ::selection{
@@ -19,6 +19,7 @@ body{
   background: #d43f8d;
 }
 .container{
+  color: white;
   width: 330px;
   background: #fff;
   text-align: center;

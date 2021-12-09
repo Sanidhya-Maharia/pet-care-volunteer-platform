@@ -7,7 +7,7 @@
 
  html{
   /* background: url("../signup2.jpg") no-repeat center center fixed; */
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(s2.jpg);
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../s2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   /* height: 800px; */
@@ -43,13 +43,13 @@ body{
 .content .text{
   font-size: 25px;
   font-weight: 600;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: rgb(247, 233, 233);
 }
 
 .content .error{
-  margin-bottom: 10px;
-  color: rgb(179, 2, 2)
+  margin-bottom: 20px;
+  color: rgb(231, 6, 6)
 }
 
 .content .field{

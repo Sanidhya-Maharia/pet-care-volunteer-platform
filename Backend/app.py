@@ -10,7 +10,7 @@ def home():
     if 'name' in session:
         return render_template('home2.html', username=session['name'])
     else:
-        return render_template('hometest.html')
+        return render_template('home1.html')
 
 @app.route("/login",methods = ['POST', 'GET'])
 def loginpage():
@@ -29,14 +29,17 @@ def loginpage():
 
 @app.route("/signup",methods = ['POST', 'GET'])
 def signup():
+    alert = None
     if request.method == 'POST':
         name = request.form['signupname']
         password = request.form['signuppass']
-        password2 = request.form['signuprepass']
+        #password2 = request.form['signuprepass']
+        password2 = password
         firstname = request.form['firstname']
         lastname = request.form['lastname']
         pincode = request.form['pincode']
-        city = request.form['city']
+        #city = request.form['city']
+        city = request.form.get('city')
         phno = request.form['phno']
         email = request.form['email']
 
@@ -44,22 +47,18 @@ def signup():
 
         result1 = SignUp.check_if_unique(name)
         if result1 != None:
-            return redirect('/signup')
+            alert = "username already exists"
         
         result2 = SignUp.check_password(password, password2)
         if result2 == None:
-            return redirect('/signup')
-
-        for x in List:
-            result3 = SignUp.check_not_null(x)
-            if result3 == None:
-                return redirect('/signup')
+            alert = "passwords don't match"
         
-        SignUp.updatelogindb(name, password)
-        SignUp.updateprofiledb(name, firstname, lastname, pincode, city, phno, email)
-        return "accepted"
+        if alert == None:
+            SignUp.updatelogindb(name, password)
+            SignUp.updateprofiledb(name, firstname, lastname, pincode, city, phno, email)
+            return redirect('/login')
 
-    return render_template('signupb.html')
+    return render_template('signuptest.html', alert=alert)
 
 @app.route("/logout",methods = ['POST', 'GET'])
 def logout():
