@@ -21,10 +21,24 @@
     background-size: cover;
   }
 
-  .home{
-    color: aliceblue;
-    margin-top: 40px;
-    margin-left: -1300px;
+  .home {
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+    margin-left: -1000px ;
+  }
+  
+  .home li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: poppins;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .home li a:hover {
+    background: #fff;
+    color: #333;
   }
 
   header{

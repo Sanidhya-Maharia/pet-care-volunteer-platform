@@ -24,7 +24,6 @@ header {
 }
 .nav-area li {
 	display: inline-block;
-    float: right;
 }
 
 .nav-area li a {
@@ -45,8 +44,8 @@ header {
     place-items: center;
     text-align: center;
     background-size: cover;
-    margin-left: 180px;
-    padding-top: 330px;
+    margin-left: 100px;
+    padding-top: 100px;
     padding-left: 100px;
 }
 
@@ -86,4 +85,16 @@ button{
 
   button:hover{
     background: aliceblue;
+}
+
+.results{
+    color: white;
+    text-align: center;
+    margin-top: 30px;
+    font-size: large;
+    font-weight: 800;
+}
+
+.results p{
+    outline-style: solid;
 }

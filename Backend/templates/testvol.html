@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Volunteer</title>
     <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
     <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style2.css') }}"> -->
-    <link rel="stylesheet" href="../static/css/style6.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style6.css') }}">
 </head>
 <body>
-    <div class="home"><i class="fa fa-arrow-left"></i> <i class="fa fa-home"></i></div>
+    <div class="home"><li><a href="/"><i class="fa fa-arrow-left"></i> <i class="fa fa-home"></i></a></li></div>
     <header>
         <div class="text">Hey <span><strong>{{username}}! </span>Thanks For Choosing To Volunteer..</strong></div><br>
         <p>Now You Need To Let Us Know Your Availabity And Pet preference</p>
@@ -29,10 +29,10 @@
 
             <div class="field">
                 <div class="label2">preference</div>
-                <select name="city">
+                <select name="pref">
                     <option value="Aquatic">Aquatic</option>
                     <option value="Small Pets">Small Pets</option>
-                    <option value="Big Pets">BIg Pets</option>
+                    <option value="Big Pets">Big Pets</option>
                     <option value="Anuything">Anything</option>
                  </select>
             </div>

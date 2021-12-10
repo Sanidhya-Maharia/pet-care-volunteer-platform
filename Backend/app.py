@@ -33,8 +33,7 @@ def signup():
     if request.method == 'POST':
         name = request.form['signupname']
         password = request.form['signuppass']
-        #password2 = request.form['signuprepass']
-        password2 = password
+        password2 = request.form['signuprepass']
         firstname = request.form['firstname']
         lastname = request.form['lastname']
         pincode = request.form['pincode']
@@ -52,6 +51,11 @@ def signup():
         result2 = SignUp.check_password(password, password2)
         if result2 == None:
             alert = "passwords don't match"
+
+        for x in List:
+            result3 = SignUp.check_not_null(x)
+            if result3 == None:
+                alert = "some fields were left empty"
         
         if alert == None:
             SignUp.updatelogindb(name, password)
@@ -70,11 +74,12 @@ def logout():
 
 @app.route("/volunteer",methods = ['POST', 'GET'])
 def volunteer():
+    username = session['name']
     if 'name' in session:
         if request.method == 'POST':
             start = request.form['sdate']
             end = request.form['edate']
-            pref = request.form['pref']
+            pref = request.form.get('pref')
             id = session['name']
             List = [start, end, pref]
 
@@ -88,14 +93,15 @@ def volunteer():
                 return redirect('/volunteer')
             
             Volunteer.check_for_existing(id, start, end, pref)
-            return "done"
+            return redirect("/")
 
-        return render_template('volunteer.html')
+        return render_template('testvol.html', username=username)
     else:
         return redirect('/login')
 
 @app.route("/search",methods = ['POST', 'GET'])
 def search():
+    display = None
     if 'name' in session:
         if request.method == 'POST':
             start = request.form['sdate']
@@ -107,9 +113,9 @@ def search():
                 if result1 == None:
                     return redirect('/search')
             
-            Search.getdata(start, end)
-            return "check console"
+            results = Search.getdata(start, end)
+            display = results
         
-        return render_template('search.html')
+        return render_template('newsearch.html', display=display)
     else:
         return redirect('/login')

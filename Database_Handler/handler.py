@@ -28,7 +28,7 @@ class SignUp:
             return 1
 
     def check_not_null(var):
-        if var==None:
+        if var==None or var=="":
             return None
         else:
             return 1
@@ -79,8 +79,12 @@ class Search:
             return 1
 
     def getdata(start, end):
+        array=[]
         q = volstat.find({"end_date": {"$gt": start}, "start_date": {"$lt": end}})
         for x in q:
             y = json.dumps(x)
             z = json.loads(y)
-            print(z)
+            array.append(z)
+
+        return array
+        
