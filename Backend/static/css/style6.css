@@ -21,6 +21,12 @@
     background-size: cover;
   }
 
+  .home{
+    color: aliceblue;
+    margin-top: 40px;
+    margin-left: -1300px;
+  }
+
   header{
       height: 25vh;
   }
@@ -42,6 +48,7 @@
   header span{
       color: aqua;
   }
+
   .content{
     width: 330px;
     border-radius: 10px;
@@ -97,6 +104,10 @@
   .field:nth-child(2){
     margin-top: 20px;
   }
+
+  .field:nth-child(3){
+    margin-top: 20px;
+  }
   
   .field span{
     position: absolute;
@@ -105,6 +116,29 @@
     color: #ffffff;
   }
 
+  .field .label{
+    color: aliceblue;
+    margin-top: 5px;
+  }
+
+  .field .label2{
+    color: aliceblue;
+    margin-top: 15px;
+    margin-right: 8px;
+  }
+
+  .field select{
+    width: 72%;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+    border-radius: 8px;
+    background: rgba(105, 105, 105, 0);
+    color: aliceblue;
+  }
+
+  select option{
+    background:rgb(168, 162, 162);
+  }
+  
   button{
     margin: 25px 0 0 0;
     width: 100%;
