@@ -49,7 +49,11 @@ class Volunteer:
             return 1
 
     def insertdata(id, start, end, pref):
-        q = {"_id": id, "start_date": start, "end_date": end, "preference": pref}
+        cq = profile.find_one({"_id": id})
+        x = json.dumps(cq)
+        y = json.loads(x)
+        city = y["city"]
+        q = {"_id": id, "start_date": start, "end_date": end, "preference": pref, "city": city}
         volstat.insert_one(q)
 
     def updatedata(id, start, end, pref):
@@ -78,13 +82,27 @@ class Search:
         else:
             return 1
 
-    def getdata(start, end):
+    def getdata(id, start, end):
+        cq = profile.find_one({"_id": id})
+        x = json.dumps(cq)
+        y = json.loads(x)
+        city = y["city"]
         array=[]
-        q = volstat.find({"end_date": {"$gt": start}, "start_date": {"$lt": end}})
+        q = volstat.find({"end_date": {"$gt": start}, "start_date": {"$lt": end}, "city": city})
         for x in q:
             y = json.dumps(x)
             z = json.loads(y)
             array.append(z)
-
         return array
-        
+
+class Profile:
+    def getdata(id):
+        q = profile.find_one({"_id": id})
+        x = json.dumps(q)
+        y = json.loads(x)
+        return y
+
+    def edit_data(id, firstname, lastname, pincode, city, phno, email):
+        q1 = {"_id": id}
+        q2 = {"$set": {"firstname": firstname, "lastname": lastname, "pincode": pincode, "city": city, "phno": phno, "email": email}}
+        profile.update_one(q1, q2)

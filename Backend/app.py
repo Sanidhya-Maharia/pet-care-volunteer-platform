@@ -1,3 +1,4 @@
+import re
 from Database_Handler.handler import *
 #from flask import Flask, request, render_template, redirect
 from flask import *
@@ -60,7 +61,8 @@ def signup():
         if alert == None:
             SignUp.updatelogindb(name, password)
             SignUp.updateprofiledb(name, firstname, lastname, pincode, city, phno, email)
-            return redirect('/login')
+            session['name'] = name
+            return redirect('/')
 
     return render_template('signuptest.html', alert=alert)
 
@@ -106,6 +108,7 @@ def search():
         if request.method == 'POST':
             start = request.form['sdate']
             end = request.form['edate']
+            id = session['name']
             List = [start, end]
 
             for x in List:
@@ -113,9 +116,46 @@ def search():
                 if result1 == None:
                     return redirect('/search')
             
-            results = Search.getdata(start, end)
+            results = Search.getdata(id, start, end)
             display = results
         
         return render_template('newsearch.html', display=display)
+    else:
+        return redirect('/login')
+
+@app.route("/profile",methods = ['GET'])
+def yourprofile():
+    display = None
+    if 'name' in session:
+        id = session['name']
+        display = Profile.getdata(id)
+        return render_template('profile.html', display=display)
+    else:
+        return redirect('/login')
+
+@app.route("/profile/<user>",methods = ['GET'])
+def otherprofile(user):
+    if 'name' in session:
+        display = Profile.getdata(user)
+        return render_template('profile2.html', display=display)
+    else:
+        return redirect('/login')
+
+@app.route("/editprofile",methods = ['POST', 'GET'])
+def editprofile():
+    if 'name' in session:
+        if request.method == 'POST':
+            firstname = request.form['firstname']
+            lastname = request.form['lastname']
+            pincode = request.form['pincode']
+            city = request.form.get('city')
+            phno = request.form['phno']
+            email = request.form['email']
+            id = session['name']
+
+            Profile.edit_data(id, firstname, lastname, pincode, city, phno, email)
+            return redirect('/profile')
+        
+        return render_template('edit.html')
     else:
         return redirect('/login')

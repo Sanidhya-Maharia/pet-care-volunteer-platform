@@ -32,7 +32,7 @@ We care About<br><span>Your Pets</span></h1>
         <div class="results">
             {% if display %}
                 {% for result in display %}
-                    <p>User: {{result["_id"]}}, Start date: {{result["start_date"]}}, End Date: {{result["end_date"]}}, Preference: {{result["preference"]}}</p>
+                    <p><strong>User:</strong> <a href="{{ url_for('otherprofile', user=result["_id"]) }}">{{result["_id"]}}</a>, <strong>Start date:</strong> {{result["start_date"]}}, <strong>End Date:</strong> {{result["end_date"]}}, <strong>Preference:</strong> {{result["preference"]}}</p>
                     <br>
                 {% endfor %}
             {% endif %}
