@@ -159,3 +159,15 @@ def editprofile():
         return render_template('edit.html')
     else:
         return redirect('/login')
+
+@app.route("/services",methods = ['GET'])
+def services():
+    return render_template('services.html')
+
+@app.route("/aboutus",methods = ['GET'])
+def aboutus():
+    return render_template('about.html')
+
+@app.route("/contact",methods = ['GET'])
+def contact():
+    return render_template('contact.html')
