@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style2.css') }}">
+</head>
+<body>
+    <div class="content">
+        <div class="text">Login To The Community</div>
+        <div class="error">
+        {% if alert %}
+          <p><strong>Error</strong>: {{alert}}</p>
+        {% endif %}
+        </div>
+        <form action="/login" method="POST">
+            <div class="field">
+              <span class="fa fa-user"></span>
+              <input type="text" name="Name" placeholder="Enter Your Name" required>
+            </div>
+          
+            <div class="field">
+              <span class="fa fa-lock"></span>
+              <input type="password" name="Password" placeholder="Enter Password">
+            </div>
+            <button>Log in</button>
+          </form>
+          <div class="or">Or</div>
+          <div class="signup"><p><a href="/signup">Sign Up</a> if You are New Here!</p></div>
+    </div>
+</body>
+</html>

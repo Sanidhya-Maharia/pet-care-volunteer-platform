@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"> -->
+    <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style1.css') }}"> -->
+    <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/newstyle.css') }}">
+</head>
+<body>
+    <header>
+    <div class="wrapper">
+<ul class="nav-area">
+<li><a href="/"><i class="fa fa-home"></i></a></li>
+</ul>
+</div>
+<!-- <div class="welcome-text">
+        <h1>
+We care About<br><span>Your Pets</span></h1>
+<a href="/login">Get Started</a>
+    </div> -->
+        <div class="box">
+            <form action="/search" method="post">
+                <span>Start Date:     <input type="date" name="sdate"></span>
+                <span>End Date:      <input type="date" name="edate"></span><br>
+                <div class="btn"><button>GO</button></div>
+            </form>
+        </div>
+        <div class="results">
+            {% if display %}
+                {% for result in display %}
+                    <p><strong>User:</strong> <a href="{{ url_for('otherprofile', user=result["_id"]) }}">{{result["_id"]}}</a>, <strong>Start date:</strong> {{result["start_date"]}}, <strong>End Date:</strong> {{result["end_date"]}}, <strong>Preference:</strong> {{result["preference"]}}</p>
+                    <br>
+                {% endfor %}
+            {% endif %}
+        </div>
+</header>
+
+</body>
+</html>

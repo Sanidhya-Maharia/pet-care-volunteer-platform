@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <script src="https://kit.fontawesome.com/29ecd4a282.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2&family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/style7.css">
+</head>
+<body>
+    <div class="home"><li><a href="/search"><i class="fa fa-arrow-left"></i> <i class="fa fa-home"></i></a></li></div>
+    <div class="card">
+        {% if display %}
+            <h1><strong>{{display["firstname"]}} {{display["lastname"]}}</strong></h1>
+            <p class="title">Volunteer</p>
+            <p>{{display["email"]}}</p>
+            <p>{{display["phno"]}}</p>
+            <p>{{display["pincode"]}}</p>
+            <p>{{display["city"]}}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
