@@ -1,19 +1,18 @@
-import re
 from Database_Handler.handler import *
 #from flask import Flask, request, render_template, redirect
 from flask import *
 
-app = Flask(__name__)
-app.secret_key = "secret"
+myapp = Flask(__name__)
+myapp.secret_key = "secret"
 
-@app.route("/")
+@myapp.route("/")
 def home():
     if 'name' in session:
         return render_template('home2.html', username=session['name'])
     else:
         return render_template('home1.html')
 
-@app.route("/login",methods = ['POST', 'GET'])
+@myapp.route("/login",methods = ['POST', 'GET'])
 def loginpage():
     alert = None
     if request.method == 'POST':
@@ -28,7 +27,7 @@ def loginpage():
     
     return render_template('testlogin.html', alert=alert)
 
-@app.route("/signup",methods = ['POST', 'GET'])
+@myapp.route("/signup",methods = ['POST', 'GET'])
 def signup():
     alert = None
     if request.method == 'POST':
@@ -70,7 +69,7 @@ def signup():
 
     return render_template('signuptest.html', alert=alert)
 
-@app.route("/logout",methods = ['POST', 'GET'])
+@myapp.route("/logout",methods = ['POST', 'GET'])
 def logout():
     if 'name' in session:
         session.pop('name', None)
@@ -78,7 +77,7 @@ def logout():
     else:
         return "no one is logged in"
 
-@app.route("/volunteer",methods = ['POST', 'GET'])
+@myapp.route("/volunteer",methods = ['POST', 'GET'])
 def volunteer():
     username = session['name']
     if 'name' in session:
@@ -105,7 +104,7 @@ def volunteer():
     else:
         return redirect('/login')
 
-@app.route("/search",methods = ['POST', 'GET'])
+@myapp.route("/search",methods = ['POST', 'GET'])
 def search():
     display = None
     if 'name' in session:
@@ -127,7 +126,7 @@ def search():
     else:
         return redirect('/login')
 
-@app.route("/profile",methods = ['GET'])
+@myapp.route("/profile",methods = ['GET'])
 def yourprofile():
     display = None
     if 'name' in session:
@@ -137,7 +136,7 @@ def yourprofile():
     else:
         return redirect('/login')
 
-@app.route("/profile/<user>",methods = ['GET'])
+@myapp.route("/profile/<user>",methods = ['GET'])
 def otherprofile(user):
     if 'name' in session:
         display = Profile.getdata(user)
@@ -145,7 +144,7 @@ def otherprofile(user):
     else:
         return redirect('/login')
 
-@app.route("/editprofile",methods = ['POST', 'GET'])
+@myapp.route("/editprofile",methods = ['POST', 'GET'])
 def editprofile():
     if 'name' in session:
         if request.method == 'POST':
@@ -164,14 +163,14 @@ def editprofile():
     else:
         return redirect('/login')
 
-@app.route("/services",methods = ['GET'])
+@myapp.route("/services",methods = ['GET'])
 def services():
     return render_template('services.html')
 
-@app.route("/aboutus",methods = ['GET'])
+@myapp.route("/aboutus",methods = ['GET'])
 def aboutus():
     return render_template('about.html')
 
-@app.route("/contact",methods = ['GET'])
+@myapp.route("/contact",methods = ['GET'])
 def contact():
     return render_template('contact.html')
