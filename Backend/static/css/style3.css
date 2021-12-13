@@ -188,3 +188,8 @@ form .page .btns button.next{
   display: block;
   color: #fff;
 }
+
+.container .error{
+  margin-bottom: 10px;
+  color: rgb(243, 2, 2)
+}

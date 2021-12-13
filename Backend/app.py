@@ -58,6 +58,10 @@ def signup():
             if result3 == None:
                 alert = "some fields were left empty"
         
+        result4 = SignUp.check_email(email)
+        if result4 == None:
+            alert = "email is not valid"
+        
         if alert == None:
             SignUp.updatelogindb(name, password)
             SignUp.updateprofiledb(name, firstname, lastname, pincode, city, phno, email)
