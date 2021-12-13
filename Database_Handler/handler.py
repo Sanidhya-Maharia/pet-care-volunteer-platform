@@ -1,5 +1,7 @@
 import pymongo
 import json
+import re
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
 client = pymongo.MongoClient("mongodb+srv://Sanidhya:user1@cluster0.9uhlx.mongodb.net/User_info?retryWrites=true&w=majority")
 db = client["User_info"]
@@ -14,6 +16,12 @@ class Login:
         return x
 
 class SignUp:
+    def check_email(email):
+        if(re.fullmatch(regex, email)):
+            return 1
+        else:
+            return None
+
     def check_if_unique(name):
         q = {"name": name}
         x = login.find_one(q, {"_id": 0})
