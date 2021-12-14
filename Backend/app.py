@@ -50,7 +50,7 @@ def signup():
         
         result2 = SignUp.check_password(password, password2)
         if result2 == None:
-            alert = "passwords don't match"
+            alert = "passwords don't match or password length is less than 5 chars"
 
         for x in List:
             result3 = SignUp.check_not_null(x)
